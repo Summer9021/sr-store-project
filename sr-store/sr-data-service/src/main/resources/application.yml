@@ -1,0 +1,10 @@
+server: 
+  port: 9501
+ 
+spring:
+  application:
+    name: sr-data-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9500/eureka/

@@ -1,0 +1,22 @@
+server:
+  port: 9500
+spring:
+  profiles:
+    active: dev
+  application:
+    name: crm-eureka
+  security:
+    user:
+      name: sr
+      password: sr
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+#  server:
+#    enable-self-preservation: false
+  client: 
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:9500/eureka/     #开发环境

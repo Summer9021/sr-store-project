@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: sr-message
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: B82561
+Implementation-Vendor-Id: sr-project
+Build-Jdk: 1.8.0_131
+Implementation-URL: http://maven.apache.org/sr-message
+Created-By: Maven Integration for Eclipse
+
