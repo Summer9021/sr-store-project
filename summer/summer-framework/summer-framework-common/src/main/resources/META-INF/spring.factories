@@ -1,0 +1,5 @@
+# PropertySource Loaders
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.sr.framework.common.utils.SpringBeanUtil,\
+com.sr.framework.common.feign.FeignConfiguration,\
+com.sr.framework.common.exception.GlobalExceptionHandler

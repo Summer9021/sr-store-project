@@ -1,0 +1,346 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.sr</groupId>
+        <artifactId>summer-framework</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>summer-framework-dependencies</artifactId>
+    <packaging>pom</packaging>
+    <version>${parent.version}</version>
+
+    <name>summer-framework-dependencies</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-boot.version>2.6.7</spring-boot.version>
+        <spring-cloud.version>2021.0.1</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
+        <open-feign.version>11.7</open-feign.version>
+        <seata.version>1.4.2</seata.version>
+        <redisson.version>3.16.7</redisson.version>
+        <!--   升级版本解决潜在 漏洞 -->
+        <!--   <hutool.version>5.8.15</hutool.version>-->
+        <hutool.version>5.8.35</hutool.version>
+        <xxl-job.version>2.3.0</xxl-job.version>
+        <mysql-connector-java.version>8.0.21</mysql-connector-java.version>
+        <hikariCP.version>3.4.5</hikariCP.version>
+        <liquibase.version>4.6.2</liquibase.version>
+        <cglib.version>3.3.0</cglib.version>
+        <minio.version>8.4.6</minio.version>
+        <!--中间件-->
+        <rocketmq.version>4.8.0</rocketmq.version>
+        <jwt.version>0.9.1</jwt.version>
+        <aliyun-oss.version>3.10.2</aliyun-oss.version>
+        <aliyun-dysmsapi.version>2.0.9</aliyun-dysmsapi.version>
+        <!--3.X使用OpenAPI3的结构，可能不支持springboot2.6.1，待验证-->
+        <!--实用插件-->
+        <knife4j.version>3.0.3</knife4j.version>
+        <!--开发工具-->
+        <commons.lang3.version>3.4</commons.lang3.version>
+        <commons.collections4.version>4.1</commons.collections4.version>
+        <lombok.version>1.18.24</lombok.version>
+        <easyexcel.version>2.1.6</easyexcel.version>
+        <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <!-- swagger3 -->
+        <springdoc-openapi-ui.version>1.6.6</springdoc-openapi-ui.version>
+        <!--    升级版本解决  GHSA-32qq-m9fh-f74w 漏洞  -->
+        <!--    <mybatis-plus.version>3.4.3.4</mybatis-plus.version>-->
+        <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
+        <IJPay.version>2.8.1</IJPay.version>
+        <xxl-job.version>2.3.0</xxl-job.version>
+        <skywalking.version>8.6.0</skywalking.version>
+        <weixin-java.version>4.3.0</weixin-java.version>
+        <protobuf-java.version>3.20.1</protobuf-java.version>
+        <okhttps.version>3.5.2</okhttps.version>
+        <hanlp.version>portable-1.8.4</hanlp.version>
+        <guava.version>32.1.2-jre</guava.version>
+        <alibaba-fastjson.version>2.0.26</alibaba-fastjson.version>
+
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- spring boot 依赖 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- spring cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- feign okhttp 依赖-->
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-okhttp</artifactId>
+                <version>${open-feign.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-spring-boot-starter</artifactId>
+                <version>${seata.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <!-- 开发工具 -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons.lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons.collections4.version}</version>
+            </dependency>
+            <!-- cglib, mybatisplus BeanUtils工具依赖  -->
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <!-- Swagger3 -->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${springdoc-openapi-ui.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!-- liquibase  -->
+            <dependency>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-core</artifactId>
+                <version>${liquibase.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-job-core</artifactId>
+                <version>${xxl-job.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-logback-1.x</artifactId>
+                <version>${skywalking.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-trace</artifactId>
+                <version>${skywalking.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-opentracing</artifactId>
+                <version>${skywalking.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-mp</artifactId>
+                <version>${weixin-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.javen205</groupId>
+                <artifactId>IJPay-WxPay</artifactId>
+                <version>${IJPay.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.javen205</groupId>
+                <artifactId>IJPay-AliPay</artifactId>
+                <version>${IJPay.version}</version>
+            </dependency>
+            <!-- 开发工具 end -->
+
+            <!-- 框架包 -->
+            <dependency>
+                <groupId>com.sr</groupId>
+                <artifactId>summer-framework-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sr</groupId>
+                <artifactId>summer-framework-starter-data-permission</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sr</groupId>
+                <artifactId>summer-framework-starter-job</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sr</groupId>
+                <artifactId>summer-framework-starter-mq</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sr</groupId>
+                <artifactId>summer-framework-starter-mysql</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sr</groupId>
+                <artifactId>summer-framework-starter-oss</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sr</groupId>
+                <artifactId>summer-framework-starter-redis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sr</groupId>
+                <artifactId>summer-framework-starter-search-facility</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sr</groupId>
+                <artifactId>summer-framework-starter-search-facility</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sr</groupId>
+                <artifactId>summer-framework-starter-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sr</groupId>
+                <artifactId>summer-framework-starter-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--框架包 end-->
+
+            <!-- API服务依赖  -->
+            <!-- API服务依赖 end -->
+
+            <!--基础组件 -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+            </dependency>
+            <!-- 中间件 -->
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-client</artifactId>
+                <version>${rocketmq.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-acl</artifactId>
+                <version>${rocketmq.version}</version>
+            </dependency>
+            <!-- Minio -->
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <version>${hikariCP.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyun-oss.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>dysmsapi20170525</artifactId>
+                <version>${aliyun-dysmsapi.version}</version>
+            </dependency>
+            <!--http工具 https://okhttps.ejlchina.com/v3/introduction.html-->
+            <dependency>
+                <groupId>com.ejlchina</groupId>
+                <artifactId>okhttps</artifactId>
+                <version>${okhttps.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ejlchina</groupId>
+                <artifactId>okhttps-fastjson</artifactId>
+                <version>${okhttps.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hankcs</groupId>
+                <artifactId>hanlp</artifactId>
+                <version>${hanlp.version}</version>
+            </dependency>
+            <!--基础组件 end-->
+
+            <!-- guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <!-- alibaba fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${alibaba-fastjson.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+</project>
